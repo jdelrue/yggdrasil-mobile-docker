@@ -4,7 +4,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" &&  apt-get install tzdata
 RUN apt-get install -y git golang wget nano
 
-RUN git clone https://github.com/yggdrasil-network/yggdrasil-go
+RUN git clone -b v0.4.0 https://github.com/yggdrasil-network/yggdrasil-go
 RUN go version
 RUN go get golang.org/x/mobile/cmd/gomobile golang.org/x/mobile/cmd/gobind
 ENV GOPATH=/go
