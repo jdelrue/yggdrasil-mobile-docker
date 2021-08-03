@@ -17,6 +17,7 @@ RUN go get golang.org/x/mobile/cmd/gobind
 RUN go get golang.org/x/mobile/cmd/gomobile
 RUN gomobile init
 
-#RUN wget https://dl.google.com/android/repository/android-ndk-r20b-linux-x86_64.zip
-#RUN cd yggdrasil-go && ./build -a 
+RUN go get github.com/yggdrasil-network/yggdrasil-extras/src/mobile || true
+RUN cd /go/src/github.com/yggdrasil-network/yggdrasil-extras && git checkout future
+RUN cd /yggdrasil-go && ./build -a 
 
